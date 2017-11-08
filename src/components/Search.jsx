@@ -11,14 +11,17 @@ class Search extends Component {
 
   onChange = (e) => {
     this.setState({[e.target.name]: [e.target.value]}) // Changes the specified targets state value
-    const key = '471d212907833bde6a872c6b03ecbfdb';
 
+    const key = '471d212907833bde6a872c6b03ecbfdb';
+    // Required so the state doesn't do API request on empty string causing 401/422
+    // eslint-disable-next-line
     if(this.state.search == '') {
       return;
     }
-
+    // API fetch request with return response for data, the data is then added to the array and the state is updated
     fetch('https://api.themoviedb.org/3/search/movie?api_key=' + key + '&language=en-US&query=' + this.state.search + '&page=1&include_adult=false')
       .then(response => {
+        // eslint-disable-next-line
         if (response.status != 200) {
           console.log('Error: ' + response.status);
           return;
@@ -34,35 +37,14 @@ class Search extends Component {
       })
   }
 
-  // searchMovies = (e) => {
-  //   e.preventDefault();
-
-  //   const key = '471d212907833bde6a872c6b03ecbfdb';
-
-  //   fetch('https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${this.state.search}&page=1&include_adult=false')
-  //     .then(response => {
-  //       if (response.status != 200) {
-  //         console.log('Error: ' + response.status);
-  //         return;
-  //       }
-  //       response.json().then(data => {
-  //         const results = data.results;
-  //         this.setState({ results });
-  //       });
-  //     })
-
-  //     .catch(err => {
-  //       console.log('Fetch error :-S', err)
-  //     })
+  // handleKeyDown = (e) => {
+  //   // eslint-disable-next-line
+  //   if (e.key == 'Enter') {
+  //     return this.handleSubmit(this.searchMovies);
+  //   }
+  //   console.log("worked");
   // }
 
-  handleKeyDown = (e) => {
-    if (e.key == 'Enter') {
-      return this.handleSubmit(this.searchMovies);
-    }
-    console.log("worked");
-  }
-  
   render() {
     return (
         <div className="searchBarContainer">
