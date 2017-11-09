@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class SearchResults extends Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
+import '../css/SearchResults.css';
 
-  handleClick() {
-    
-  }
+class SearchResults extends Component {
   render() {
     const imageLink = 'https://image.tmdb.org/t/p/w300';
     return (
-      <ul id="results" onClick={this.handleClick}>
+      <ul className="formResults">
         {this.props.results.map((element, index) => {
           return(
             <li key={index} onClick={this.handleClick}>

@@ -28,9 +28,3 @@ form {
 .searchBar:focus::placeholder {
   color: #1DE9B6;
 }
-
-.noDisplay {
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-}
