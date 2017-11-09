@@ -6,10 +6,28 @@ header {
   padding-bottom: 25px;
 }
 
+.navBar li {
+  margin-bottom: 10px;
+}
+
+@media(min-width: 768px) {
+  .navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .navBar li {
+    margin: 0 10px;
+  }
+}
+
 @media(min-width: 992px) {
   header {
     flex-direction: row;
     justify-content: space-between;
     padding: 0;
+  }
+  .navBar li {
+    margin: 0 0 0 20px;
   }
 }
