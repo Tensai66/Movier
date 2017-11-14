@@ -31,3 +31,13 @@ header {
     margin: 0 0 0 20px;
   }
 }
+
+h4 {
+  font-weight: 800;
+  transition: all 0.35s ease-out;
+  padding-left: 10px;
+}
+
+a h4:hover {
+  color: #1DE9B6;
+}

@@ -9,8 +9,8 @@ class NavbarLogin extends Component {
       <header>
         <nav>
           <ul className="navBar">
-            <Link to={'/login/'}>Login</Link>
-            <Link to={'/signup/'}>Signup</Link>
+            <Link to={'/login/'}><h4>Login</h4></Link>
+            <Link to={'/signup/'}><h4>Signup</h4></Link>
           </ul>
         </nav>
       </header>
