@@ -5,7 +5,10 @@ import Search from './Search.jsx';
 class Movie extends Component {
   state = {
     movie: {
-      genres: []
+      genres: [],
+      videos: {
+        results: []
+      }
     }
   }
 
@@ -13,7 +16,7 @@ class Movie extends Component {
     const key = '471d212907833bde6a872c6b03ecbfdb';
     const movieId = window.location.pathname.substring(7);
 
-    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&language=en-US&append_to_response=credits`)
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${key}&language=en-US&append_to_response=credits,videos`)
     .then(response => {
       if (response.status !== 200) {
         console.log('Error: ' + response.status);
@@ -28,7 +31,7 @@ class Movie extends Component {
     })
     .catch(err => {
       console.log('Fetch Error :-S', err);
-    })  
+    })
   }
 
   componentDidMount() {
@@ -66,9 +69,14 @@ class Movie extends Component {
                   }
                 })}
               </li>
-              
             </ul>
             <p>{this.state.movie.overview}</p>
+            {this.state.movie.videos.results.length > 0 && 
+              <div className="ytPlayer">
+                <iframe src={`https://www.youtube.com/embed/${this.state.movie.videos.results[0].key}`} title="movietrailer"></iframe>;
+              </div>
+            }
+            {/* <p>{this.state.movie.videos.results[0].key}</p> */}
           </section>
         </div>
       </div>

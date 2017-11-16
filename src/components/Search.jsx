@@ -6,7 +6,7 @@ import '../css/Search.css';
 class Search extends Component {
   state = {
     search: '',
-    results: [],
+    results: []
   }
 
   onChange = (e) => {
