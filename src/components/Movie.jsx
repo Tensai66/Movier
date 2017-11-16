@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Navbar from './Navbar.jsx';
 import Search from './Search.jsx';
 
+import '../css/Movie.css';
+
 class Movie extends Component {
   state = {
     movie: {
@@ -53,15 +55,20 @@ class Movie extends Component {
         <div className="movieContent">
           <div className="moviePoster">
             <img src={this.state.movie.poster_path === null ? 'http://via.placeholder.com/640x960' : `https://image.tmdb.org/t/p/w640${this.state.movie.poster_path}`} alt={`${this.state.movie.title} poster`} className="movieImg" />
+            <h2 className="movieTitle">{this.state.movie.title}</h2>
           </div>
 
           <section className="movieDetails">
-            <h2 className="movieTitle">{this.state.movie.title}</h2>
+            {this.state.movie.videos.results.length > 0 && 
+              <div className="ytPlayer ytContainer16x9 ytContainer4x3">
+                <iframe src={`https://www.youtube.com/embed/${this.state.movie.videos.results[0].key}`} title="movietrailer"></iframe>;
+              </div>
+            }
             <ul className="movieDetails">
-              <li><span>Release date:</span> {this.state.movie.release_date}</li>
-              <li><span>Rating:</span> {this.state.movie.vote_average}</li>
+              <li><span className="weight">Release date:</span> {this.state.movie.release_date}</li>
+              <li><span className="weight">Rating:</span> {this.state.movie.vote_average}</li>
 
-              <li><span>Genres: </span> {this.state.movie.genres.map((element, index) => {
+              <li><span className="weight">Genres: </span> {this.state.movie.genres.map((element, index) => {
                   if (index < this.state.movie.genres.length - 1) {
                     return this.state.movie.genres[index].name + ', '
                   } else {
@@ -71,12 +78,11 @@ class Movie extends Component {
               </li>
             </ul>
             <p>{this.state.movie.overview}</p>
-            {this.state.movie.videos.results.length > 0 && 
-              <div className="ytPlayer">
+            {/* {this.state.movie.videos.results.length > 0 && 
+              <div className="ytPlayer ytContainer16x9 ytContainer4x3">
                 <iframe src={`https://www.youtube.com/embed/${this.state.movie.videos.results[0].key}`} title="movietrailer"></iframe>;
               </div>
-            }
-            {/* <p>{this.state.movie.videos.results[0].key}</p> */}
+            } */}
           </section>
         </div>
       </div>
