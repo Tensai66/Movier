@@ -138,7 +138,7 @@ class Signup extends Component {
                 </span>
               </span>
               {this.state.errors.signup && <h4 style={{color: 'red'}}>{this.state.errors.signup}</h4>}
-              <button onClick={this.completeSignup}>Signup</button>
+              <button onClick={this.completeSignup}><h3>Signup</h3></button>
             </form>
           }
           {!this.state.emailVerified &&

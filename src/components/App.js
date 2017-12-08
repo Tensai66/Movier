@@ -14,6 +14,7 @@ import Movie from './Movie.jsx';
 import Home from './Home.jsx';
 import Signup from './Signup.jsx';
 import Login from './Login.jsx';
+import Profile from './Profile.jsx';
 
 import '../css/App.css';
 
@@ -38,6 +39,7 @@ class App extends Component {
           <Switch>
             <Route path={'/movie/:id'} component={Movie} />
             <Route path={'/signup'} component={Signup} />
+            <Route path={'/profile'} component={Profile} />
             <Route path={'/login'} component={Login} />
             <Route path={'/'} component={Home} />
             <Route path='*' render={() => <h3>This page does not exist</h3>} />

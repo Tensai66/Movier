@@ -78,7 +78,7 @@ class Login extends Component {
               onChange={this.onChange}
               value={this.state.username}/>
           </span>
-          <button onClick={this.onSubmit}>Login</button>
+          <button onClick={this.onSubmit}><h3>Login</h3></button>
         </form>
       </div>
     )

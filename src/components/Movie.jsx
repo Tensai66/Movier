@@ -46,6 +46,11 @@ class Movie extends Component {
     }
   }
 
+  addMovie = movie =>
+  this.props
+    .createMovie(movie)
+    .then(() => this.props.history.push("/"));
+
   render() {
     return (
       <div className="movieContainer">
@@ -76,8 +81,8 @@ class Movie extends Component {
                   }
                 })}
               </li>
+              <li><span className="weight">Overview:</span> {this.state.movie.overview}</li>
             </ul>
-            <p>{this.state.movie.overview}</p>
             {/* {this.state.movie.videos.results.length > 0 && 
               <div className="ytPlayer ytContainer16x9 ytContainer4x3">
                 <iframe src={`https://www.youtube.com/embed/${this.state.movie.videos.results[0].key}`} title="movietrailer"></iframe>;

@@ -1,0 +1,21 @@
+.profileContainer {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.profileBubble {
+  font-size: 30px;
+  padding: 20px 30px;
+  color: white;
+  border-radius: 50%;
+  background-color: #1DE9B6;
+}
+
+.profileBubble:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.profileContent {
+  text-align: center;
+}
