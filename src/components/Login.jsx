@@ -7,7 +7,6 @@ import mapStateToProps from '../utils/redux'
 import Navbar from './Navbar.jsx';
 
 import '../css/Login.css';
-// import './styles/Login.css'
 
 class Login extends Component {
   state = {
