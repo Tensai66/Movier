@@ -6,17 +6,19 @@ header {
   padding-bottom: 25px;
 }
 
-.navBar li {
+.navBar li, 
+.navigationNotLoggedIn li,
+.navigationLoggedIn li {
   margin-bottom: 10px;
 }
 
 @media(min-width: 768px) {
-  .navBar {
+  .navBar, .navigationNotLoggedIn, .navigationLoggedIn {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
   }
-  .navBar li {
+  .navBar li, .navigationNotLoggedIn li, .navigationLoggedIn li {
     margin: 0 10px;
   }
 }
@@ -27,7 +29,7 @@ header {
     justify-content: space-between;
     padding: 0;
   }
-  .navBar li {
+  .navBar li, .navigationNotLoggedIn li, .navigationLoggedIn li {
     margin: 0 0 0 20px;
   }
 }
@@ -39,5 +41,9 @@ h4 {
 }
 
 a h4:hover {
+  color: #1DE9B6;
+}
+
+h4:hover {
   color: #1DE9B6;
 }
