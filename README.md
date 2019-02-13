@@ -3,6 +3,12 @@
   This project is working off the The Movie DB API (https://www.themoviedb.org/documentation/api. 
   
   The idea of the project is to be able to sign in as a user and save favorite movies, the user should also be able to search movies and get a response from the API which then shows movie posters, ratings, overview, and most importantly, movie recommendations!
+  
+  
+  ![movier home page](https://i.imgur.com/Q0rRaA8.jpg)
+         
+         
+  ![movier search menu](https://i.imgur.com/hlyLb6g.jpg)
 
   Here is what you'll need to know to run this LOCALLY. 
   * Using PostgreSQL
